@@ -1,0 +1,25 @@
+<form action="" method="post" (submit)="handleSubmit()">
+    <div class="form-horizontal">
+        <h4>Create/Edit Department</h4>
+        <hr />
+        <div  class="form-group">
+            <label class="control-label col-md-2" for="">Name En: </label>
+            <div class="col-md-10">
+                <input class="form-control" type="text" name="departmentEn" [(ngModel)]="department.departmentEn" />
+            </div>
+          </div>
+        
+          <div  class="form-group">
+            <label class="control-label col-md-2" for="">Name Ar: </label>
+            <div class="col-md-10">
+                <input  class="form-control" type="text" name="departmentAr" [(ngModel)]="department.departmentAr" />
+            </div>  
+          </div>
+          <div class="form-group">
+              <div class="col-md-offset-2 col-md-10">
+                  <button type="submit" class="btn btn-success" [disabled]="isDisable">Save</button>
+              </div>
+          </div>
+      
+    </div>
+  </form>

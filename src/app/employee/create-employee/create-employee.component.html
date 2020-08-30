@@ -1,0 +1,64 @@
+<form action="" method="post" (submit)="handleSubmit()">
+
+
+
+  <div class="form-horizontal">
+      <h4>Create/Edit Employee</h4>
+      <hr />
+
+
+      <div class="form-group">
+          <label for="" class="control-label col-md-2">Name En: </label>
+          <div class="col-md-10">
+              <input class="form-control" type="text" name="employeeNameEn" [(ngModel)]="employee.employeeNameEn" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="" class="control-label col-md-2">Name Ar: </label>
+            <div class="col-md-10">
+                <input  class="form-control" type="text" name="employeeNameAr" [(ngModel)]="employee.employeeNameAr" />
+            </div>
+          </div>
+
+
+          <div class="form-group">
+              <label for="" class="control-label col-md-2">is Manager: </label>
+              <div class="col-md-10">
+                <select class="list-box tri-state" [(ngModel)]="employee.isManger" name="isManger">
+                  <option value="true">True</option>
+                  <option value="false">False</option>
+                </select>
+              </div>
+            </div>
+          
+            <div class="form-group">
+              <label for="" class="control-label col-md-2">Department id: </label>
+              <div class="col-md-10">
+                <select class="form-control" [(ngModel)]="employee.departmentId" name="departmentId" required>
+                  <option value="0" selected>Select Department</option>
+                  <option *ngFor="let Department of departments" value="{{ Department.id }}">
+                    {{ Department.departmentEn }}
+                  </option>
+                </select>
+              </div>          
+            </div>
+          
+            <div>
+              <label for="" class="control-label col-md-2">Join Date: </label>
+              <div class="col-md-10">
+                  <input class="form-control" type="date" name="joinDate" [(ngModel)]="employee.joinDate" />
+              </div>
+            </div>
+          
+      <div class="form-group">
+          <div class="col-md-offset-2 col-md-10">
+              <button type="submit" class="btn btn-default" [disabled]="isDisable">Save</button>
+          </div>
+      </div>
+  </div>
+
+
+
+
+</form>

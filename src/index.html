@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <base href="/">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Employee Task</title>
+        <link href="assets/Content/Admin/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/Content/Admin/font-awesome/css/font-awesome.css" rel="stylesheet">
+        <link href="assets/Content/Admin/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+        <link href="assets/Content/Admin/css/animate.css" rel="stylesheet">
+        <link href="assets/Content/Admin/css/style.css" rel="stylesheet">
+        <style>
+            .no-sort::after {
+                display: none !important;
+            }
+
+            .no-sort {
+                pointer-events: none !important;
+                cursor: default !important;
+            }
+
+            #table_length {
+                position: absolute;
+                margin-top: 42px;
+            }
+        </style>
+        <style type="text/css">
+            input, select, textarea {
+                max-width: 100%;
+            }
+
+            .form-style-3 {
+                max-width: 100%;
+                font-family: "Droid Arabic Kufi", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            }
+
+                .form-style-3 label {
+                    display: block;
+                    margin-bottom: 10px;
+                }
+
+                    .form-style-3 label > span {
+                        float: right;
+                        width: 20px;
+                        color: #F072A9;
+                        font-weight: bold;
+                        font-size: 13px;
+                        text-shadow: 1px 1px 1px #fff;
+                    }
+
+                .form-style-3 fieldset {
+                    border-radius: 10px;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    margin: 0px 0px 10px 0px;
+                    border: 1px solid #004489;
+                    padding: 20px;
+                    background: #F4F4FF;
+                    box-shadow: inset 0px 0px 15px #CADFF5;
+                    -moz-box-shadow: inset 0px 0px 15px #CADFF5;
+                    -webkit-box-shadow: inset 0px 0px 15px #CADFF5;
+                }
+
+                    .form-style-3 fieldset legend {
+                        color: #004489;
+                        border-top: 1px solid #004489;
+                        border-left: 1px solid #004489;
+                        border-right: 1px solid #004489;
+                        border-radius: 5px 5px 0px 0px;
+                        -webkit-border-radius: 5px 5px 0px 0px;
+                        -moz-border-radius: 5px 5px 0px 0px;
+                        background: #F4F4FF;
+                        padding: 0px 8px 3px 8px;
+                        box-shadow: -0px -1px 2px #CADFF5;
+                        -moz-box-shadow: -0px -1px 2px #CADFF5;
+                        -webkit-box-shadow: -0px -1px 2px #CADFF5;
+                        font-weight: normal;
+                        font-size: 25px;
+                        text-align: right;
+                    }
+
+                .form-style-3 textarea {
+                    width: 250px;
+                    height: 100px;
+                }
+
+                .form-style-3 input[type=text],
+                .form-style-3 input[type=date],
+                .form-style-3 input[type=datetime],
+                .form-style-3 input[type=number],
+                .form-style-3 input[type=search],
+                .form-style-3 input[type=time],
+                .form-style-3 input[type=url],
+                .form-style-3 input[type=email],
+                .form-style-3 select,
+                .form-style-3 textarea {
+                    border-radius: 3px;
+                    -webkit-border-radius: 3px;
+                    -moz-border-radius: 3px;
+                    border: 1px solid #004489;
+                    outline: none;
+                    color: #004489;
+                    padding: 5px 8px 5px 8px;
+                    box-shadow: inset 1px 1px 4px #CADFF5;
+                    -moz-box-shadow: inset 1px 1px 4px #CADFF5;
+                    -webkit-box-shadow: inset 1px 1px 4px #CADFF5;
+                    background: #F4F4FF;
+                }
+
+            .floatForm {
+                float: left;
+                margin-top: 2px;
+            }
+
+            .form-style-3 input[type=submit],
+            .form-style-3 input[type=button] {
+                background: #46A2FF;
+                padding: 5px 15px 5px 15px;
+                color: #ffffff;
+                border-radius: 3px;
+                border-radius: 3px;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                font-weight: bold;
+            }
+
+            .required {
+                color: red;
+                font-weight: normal;
+            }
+
+            .label {
+                font-family: "Droid Arabic Kufi"
+            }
+
+            .nav > li > a {
+                font-family: "Droid Arabic Kufi";
+                font-size: 12px;
+            }
+        </style>
+        <style>
+            .form-horizontal .control-label {
+                text-align: right;
+                font-size: 18px;
+            }
+
+            .menu-area ul li a {
+                color: #545454;
+            }
+
+            .sticky ul li a {
+                color: white;
+            }
+
+            html {
+                height: 100%;
+                box-sizing: border-box;
+            }
+
+            *,
+            *:before,
+            *:after {
+                box-sizing: inherit;
+            }
+
+            body {
+                font-family: "Helvetica Neue", Arial, sans-serif;
+            }
+
+            .table {
+                direction: rtl;
+            }
+
+                .table th {
+                    text-align: right;
+                }
+        </style>
+        <style>
+            .table {
+                direction: ltr;
+            }
+
+                .table th {
+                    text-align: left;
+                }
+
+            .Reslanglogin {
+                float: right;
+                padding: 14px;
+                padding-right: 0px;
+            }
+
+            .logot {
+                float: right;
+                padding: 14px;
+                padding-left: 4px;
+            }
+
+            .wrapper-content {
+                overflow-x: auto;
+            }
+
+            .btn-circle {
+                font-size: 15px;
+                padding: 3px 0;
+            }
+        </style>
+        <style>
+            .imgs-circle {
+                width: 68px;
+                height: 68px;
+                border: 2px solid #2f4050;
+                border-radius: 47%;
+            }
+        </style>
+        <style>
+            .wrapper-content {
+                overflow-x: hidden;
+            }
+            thead{
+                background: #2f2b2b !important;
+                color: white !important;
+                font-size: 14px !important;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <div id="wrapper">
+                <nav class="navbar-default navbar-static-side" role="navigation">
+                    <div class="sidebar-collapse">
+                        <ul class="nav" id="side-menu">
+                            <li class="nav-header">
+                                <div class="dropdown profile-element">
+                                    <span>
+                                    </span>
+                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                        <span class="clear">
+                                            <span class="block m-t-xs">
+
+                                                <section class="text-center">
+                                                    <img class="imgs-circle" src="assets/Content/Adminicon.jpg" />
+                                                </section>
+                                                <strong class="font-bold text-center"><span>Ahmed Anwar Ibrahem</span></strong>
+                                            </span>
+                                        </span>
+                                    </a>
+
+                                </div>
+
+                            </li>
+                            <li>
+                                <a href="~/Home/Index"><i class="fa fa-home"></i> <span class="nav-label">Home</span></a>
+
+                            </li>
+                            <li>
+                                <a href="/departments"><i class="fa fa-list"></i> <span class="nav-label">departments</span></a>
+                            </li>
+
+                            <li>
+                                <a href="/employees"><i class="fa fa-male"></i> <span class="nav-label">Employees</span></a>
+
+                            </li>
+
+                            <li>
+                                <a href="/employeetasks"><i class="fa fa-check"></i> <span class="nav-label">Tasks</span></a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </nav>
+
+
+
+                <div id="page-wrapper" class="white-bg dashbard-1">
+                    <div class="row border-bottom">
+                        <nav class="navbar navbar-static-top banner" role="navigation" style="margin-bottom: 0">
+                            <div class="navbar-header">
+                                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+
+                            </div>
+
+
+                        </nav>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="wrapper wrapper-content">
+                                <app-root></app-root>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <div class="pull-right">
+                        </div>
+                        <div>
+                            <p>Copyright Ahmed Anwar all right reserved.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>      
+
+    </body>
+
+</html>

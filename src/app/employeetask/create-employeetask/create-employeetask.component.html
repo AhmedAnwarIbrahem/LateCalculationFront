@@ -1,0 +1,48 @@
+<form action="" method="post" (submit)="handleSubmit()">
+    <div class="form-horizontal">
+        <h4>Create/Edit Task</h4>
+        <hr />
+
+        <div class="form-group">
+            <label for="" class="control-label col-md-2">Employee </label>
+            <div class="form-group col-md-10">
+                <select class="form-control" [(ngModel)]="employeetask.employeeId" name="employeeId" required>
+                <option value="0" selected>Select Employee</option>
+                <option *ngFor="let Employee of employees" value="{{ Employee.id }}">
+                    {{ Employee.employeeNameEn }}
+                </option>
+                </select>
+            </div>
+        </div>
+    
+        <div class="form-group">
+          <label for="" class="control-label col-md-2">Description: </label>
+          <div class="col-md-10">
+              <input class="form-control" type="text" name="description" [(ngModel)]="employeetask.description" />
+          </div>
+        </div>  
+     
+        <div class="form-group">
+          <label for="" class="control-label col-md-2">Start Date: </label>
+          <div class="col-md-10">
+              <input class="form-control" type="date" name="startDate" [(ngModel)]="employeetask.startDate" />            
+          </div>
+  
+        </div>
+      
+        <div class="form-group">
+            <label for="" class="control-label col-md-2">End Date: </label>
+            <div class="col-md-10">
+                <input class="form-control" type="date" name="endDate" [(ngModel)]="employeetask.endDate" />            
+            </div>
+    
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-default" [disabled]="isDisable">Save</button>
+            </div>
+        </div>
+    
+
+    </div>
+</form>

@@ -1,0 +1,36 @@
+<a routerLink="/employees/create" class="btn btn-primary"> Create <i class="fa fa-plus"></i></a>
+<br/>
+<br/>
+
+<table datatable class="table row-border hover" *ngIf="!isLoading">
+  <thead>
+      <tr>
+          <th>ID</th>
+          <th>NameAr</th>
+          <th>NameEn</th>
+          <th>is Manager?</th>
+          <th>Department Name</th>
+          <th>Join Date</th>
+          <th>Actions</th>
+      
+        </tr>
+  </thead>
+<tbody>
+    <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.employeeNameAr }}</td>
+        <td>{{ employee.employeeNameEn }}</td>
+        <td>{{ employee.isManger }}</td>
+        <td>{{ employee.departmentEn }}</td>
+        <td>{{ employee.joinDate }}</td>
+        <td> 
+            <a class="btn btn-xs btn-primary" routerLink="/employees/{{ employee.id }}/tasks"><i class="fa fa-list"></i> View Tasks </a> &nbsp;
+          <a class="btn btn-xs btn-default" routerLink="/employees/edit/{{ employee.id }}"><i class="fa fa-edit"></i> Edit </a> &nbsp;
+          <a class="btn btn-xs btn-danger" (click)="handleDelete(employee.id)"><i class="fa fa-trash"></i> Delete </a>
+        </td>
+      </tr>
+    
+</tbody>
+</table>
+
+<h1 *ngIf="isLoading">Loading...</h1>

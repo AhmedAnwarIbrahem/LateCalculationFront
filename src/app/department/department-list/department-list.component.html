@@ -1,0 +1,29 @@
+<a routerLink="/departments/create" class="btn btn-primary"> Create <i class="fa fa-plus"></i></a>
+<br/>
+<br/>
+
+<table datatable class="table row-border hover" *ngIf="!isLoading">
+  <thead>
+      <tr>
+          <th>ID</th>
+          <th>NameAr</th>
+          <th>NameEn</th>
+          <th>Actions</th>
+      
+        </tr>
+  </thead>
+<tbody>
+    <tr *ngFor="let department of departments">
+        <td>{{ department.id }}</td>
+        <td>{{ department.departmentAr }}</td>
+        <td>{{ department.departmentEn }}</td>
+        <td> 
+          <a class="btn btn-xs btn-default" routerLink="/departments/edit/{{ department.id }}"><i class="fa fa-edit"></i> Edit </a> &nbsp;
+          <a class="btn btn-xs btn-danger" (click)="handleDelete(department.id)"><i class="fa fa-trash"></i> Delete </a>
+        </td>
+      </tr>
+    
+</tbody>
+</table>
+
+<h1 *ngIf="isLoading">Loading...</h1>
