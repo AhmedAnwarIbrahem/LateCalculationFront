@@ -1,0 +1,55 @@
+<form action="" method="post" (submit)="handleSubmit()">
+    <div class="form-horizontal">
+        <h4>Create/Edit log</h4>
+        <hr />
+
+        <div class="form-group">
+            <label for="" class="control-label col-md-2">Employee </label>
+            <div class="form-group col-md-10">
+                <select class="form-control" [(ngModel)]="employeelog.employeeId" name="employeeId" required>
+                <option value="0" selected>Select Employee</option>
+                <option *ngFor="let Employee of employees" value="{{ Employee.id }}">
+                    {{ Employee.employeeNameEn }}
+                </option>
+                </select>
+            </div>
+        </div>
+    
+
+     
+        <div class="form-group">
+          <label for="" class="control-label col-md-2">Day Date: </label>
+          <div class="col-md-10">
+              <input class="form-control" type="date" name="dayDate" [(ngModel)]="employeelog.dayDate" />            
+          </div>
+  
+        </div>
+      
+        <div class="form-group col-md-6">
+            <label for="" class="control-label col-md-2">IN: </label>
+            <div class="col-md-10">
+                <input class="form-control" type="time" name="logIn" [(ngModel)]="employeelog.logIn" />            
+            </div>    
+        </div>
+        <div class="form-group col-md-6">
+            <label for="" class="control-label col-md-2">Out: </label>
+            <div class="col-md-10">
+                <input class="form-control" type="time" name="logOut" [(ngModel)]="employeelog.logOut" />            
+            </div>    
+        </div>
+
+        <div class="form-group">
+            <label for="" class="control-label col-md-2">Description: </label>
+            <div class="col-md-10">
+                <input class="form-control" type="text" name="description" [(ngModel)]="employeelog.description" />
+            </div>
+          </div>  
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-default" [disabled]="isDisable">Save</button>
+            </div>
+        </div>
+    
+
+    </div>
+</form>

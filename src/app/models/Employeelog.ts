@@ -1,4 +1,4 @@
-export default class EmployeeTask {
+export default class Employeelog{
   id?: number = null;
   // title: string = "";
   descripion: string = "";

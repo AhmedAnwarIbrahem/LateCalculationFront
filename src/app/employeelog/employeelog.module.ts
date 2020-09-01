@@ -3,16 +3,16 @@ import { FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { DataTablesModule } from 'angular-datatables';
 
-import { EmployeetaskService } from "./employeetask.service";
-import { EmployeetaskListComponent } from "./employeetask-list/employeetask-list.component";
-import { CreateEmployeetaskComponent } from "./create-employeetask/create-employeetask.component";
+import { EmployeelogService } from "./employeelog.service";
+import { EmployeelogListComponent } from "./employeelog-list/employeelog-list.component";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule } from '@angular/router';
+import { CreateEmployeelogComponent } from './create-employeelog/create-employeelog.component';
 
 @NgModule({
   declarations: [
-    EmployeetaskListComponent,
-    CreateEmployeetaskComponent,
+    EmployeelogListComponent,
+    CreateEmployeelogComponent,
   ],
   imports: [
     CommonModule,
@@ -22,6 +22,6 @@ import { RouterModule } from '@angular/router';
     RouterModule,
   ],
   exports: [],
-  providers: [EmployeetaskService]
+  providers: [EmployeelogService]
 })
-export class EmployeetaskModule {}
+export class EmployeelogModule {}

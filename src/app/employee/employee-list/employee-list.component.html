@@ -20,7 +20,7 @@
         <td>{{ employee.employeeNameEn }}</td>
         <td>{{ employee.joinDate }}</td>
         <td> 
-            <a class="btn btn-xs btn-primary" routerLink="/employees/{{ employee.id }}/tasks"><i class="fa fa-list"></i> View Tasks </a> &nbsp;
+            <a class="btn btn-xs btn-primary" routerLink="/employees/{{ employee.id }}/logs"><i class="fa fa-list"></i> View logs </a> &nbsp;
           <a class="btn btn-xs btn-default" routerLink="/employees/edit/{{ employee.id }}"><i class="fa fa-edit"></i> Edit </a> &nbsp;
           <a class="btn btn-xs btn-danger" (click)="handleDelete(employee.id)"><i class="fa fa-trash"></i> Delete </a>
         </td>

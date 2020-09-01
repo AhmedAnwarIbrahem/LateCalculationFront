@@ -1,0 +1,36 @@
+<a routerLink="/employeelogs/create" class="btn btn-primary"> Create <i class="fa fa-plus"></i></a>
+<br/>
+<br/>
+
+<table datatable class="table row-border hover" *ngIf="!isLoading">
+  <thead>
+      <tr>
+          <th>ID</th>
+          <th>EmployeeNameEn</th>
+          <th>DayDate</th>
+          <th>LogIn</th>
+          <th>LogOut</th>
+          <th>Description</th>
+          <th>Actions</th>
+      
+        </tr>
+  </thead>
+<tbody>
+    <tr *ngFor="let employeelog of employeelogs">
+        <td>{{ employeelog.id }}</td>
+        <td>{{ employeelog.employeeNameEn }}</td>
+        <td>{{ employeelog.dayDate }}</td>
+        <td>{{ employeelog.logIn }}</td>
+        <td>{{ employeelog.logOut }}</td>
+        <td>{{ employeelog.description }}</td>
+
+        <td> 
+          <a class="btn btn-xs btn-default" routerLink="/employeelogs/edit/{{ employeelog.id }}"><i class="fa fa-edit"></i> Edit </a> &nbsp;
+          <a class="btn btn-xs btn-danger" (click)="handleDelete(employeelog.id)"><i class="fa fa-trash"></i> Delete </a>
+        </td>
+      </tr>
+    
+</tbody>
+</table>
+
+<h1 *ngIf="isLoading">Loading...</h1>

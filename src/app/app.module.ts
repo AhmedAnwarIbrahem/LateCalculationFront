@@ -8,7 +8,7 @@ import { AppComponent } from "./app.component";
 import { appRouting } from './app.routing';
 
 import { EmployeeModule } from "./employee/employee.module";
-import { EmployeetaskModule } from "./employeetask/employeetask.module";
+import { EmployeelogModule } from './employeelog/employeelog.module';
 
 
 
@@ -18,7 +18,7 @@ import { EmployeetaskModule } from "./employeetask/employeetask.module";
     BrowserModule,
     appRouting,
     EmployeeModule,
-    EmployeetaskModule,
+    EmployeelogModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 2000,
