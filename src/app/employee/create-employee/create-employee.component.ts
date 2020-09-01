@@ -5,8 +5,7 @@ import * as moment from 'moment';
 
 import Employee from "../../models/Employee";
 import { EmployeeService } from "./../employee.service";
-import { DepartmentService } from "../../department/department.service";
-import Department from 'src/app/models/Department';
+
 
 @Component({
   selector: "app-create-employee",
@@ -16,12 +15,10 @@ import Department from 'src/app/models/Department';
 export class CreateEmployeeComponent implements OnInit {
   isDisabled = false;
   employee: Employee = new Employee();
-  departments: Department[] = [];
   employeeId: number = null;
 
   constructor(
     private employeeService: EmployeeService, 
-    private departmentService: DepartmentService,
     private toastr: ToastrService,
     private router: Router,
     private route: ActivatedRoute,
@@ -29,16 +26,10 @@ export class CreateEmployeeComponent implements OnInit {
 
   ngOnInit() {
     this.employeeId = this.route.snapshot.params.id;
-    this.getDepartments();
     this.employeeId && this.getEmployee(this.employeeId);
   }
 
-  getDepartments() {
-    this.departmentService.getDepartments().subscribe((response: any) => {
-      this.departments = response;
-      console.log(this.departments);
-    });
-  }
+
 
   getEmployee(id: number) {
     this.employeeService.getEmployeesById(id).subscribe((response:any) => {
@@ -50,11 +41,6 @@ export class CreateEmployeeComponent implements OnInit {
 
   handleSubmit() {
     this.isDisabled = true;
-    if(this.employee.departmentId == 0 || this.employee.departmentId == null){
-      this.toastr.error('Please Select Department First');
-      return;
-    }
-
     this.employeeId ? this.handleEdit() : this.handleCreate();
   }
 

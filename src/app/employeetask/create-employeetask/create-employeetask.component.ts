@@ -57,10 +57,7 @@ export class CreateEmployeetaskComponent implements OnInit {
       this.toastr.error('Please Select Employee First');
       return;
     }
-    if(moment(this.employeetask.startDate) >= moment(this.employeetask.endDate)){
-      this.toastr.error('Please Select EndDate Greater Than StartDate');
-      return;
-    }
+
     this.employeetaskId ? this.handleEdit() : this.handleCreate();
   }
 

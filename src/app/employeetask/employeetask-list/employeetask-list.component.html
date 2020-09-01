@@ -7,8 +7,9 @@
       <tr>
           <th>ID</th>
           <th>Description</th>
-          <th>StartDate</th>
-          <th>EndDate</th>
+          <th>DayDate</th>
+          <th>LogIn</th>
+          <th>LogOut</th>
           <th>EmployeeNameEn</th>
           <th>Actions</th>
       
@@ -18,8 +19,9 @@
     <tr *ngFor="let employeetask of employeetasks">
         <td>{{ employeetask.id }}</td>
         <td>{{ employeetask.description }}</td>
-        <td>{{ employeetask.startDate }}</td>
-        <td>{{ employeetask.endDate }}</td>
+        <td>{{ employeetask.dayDate }}</td>
+        <td>{{ employeetask.logIn }}</td>
+        <td>{{ employeetask.logOut }}</td>
         <td>{{ employeetask.employeeNameEn }}</td>
         <td> 
           <a class="btn btn-xs btn-default" routerLink="/employeetasks/edit/{{ employeetask.id }}"><i class="fa fa-edit"></i> Edit </a> &nbsp;

@@ -8,8 +8,6 @@
           <th>ID</th>
           <th>NameAr</th>
           <th>NameEn</th>
-          <th>is Manager?</th>
-          <th>Department Name</th>
           <th>Join Date</th>
           <th>Actions</th>
       
@@ -20,8 +18,6 @@
         <td>{{ employee.id }}</td>
         <td>{{ employee.employeeNameAr }}</td>
         <td>{{ employee.employeeNameEn }}</td>
-        <td>{{ employee.isManger }}</td>
-        <td>{{ employee.departmentEn }}</td>
         <td>{{ employee.joinDate }}</td>
         <td> 
             <a class="btn btn-xs btn-primary" routerLink="/employees/{{ employee.id }}/tasks"><i class="fa fa-list"></i> View Tasks </a> &nbsp;

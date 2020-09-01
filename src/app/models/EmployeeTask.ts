@@ -1,8 +1,9 @@
 export default class EmployeeTask {
   id?: number = null;
-  title: string = "";
+  // title: string = "";
   descripion: string = "";
-  startDate;
-  endDate;
+  dayDate;
+  logIn;
+  logOut;
   employeeId: number = 0;
 }

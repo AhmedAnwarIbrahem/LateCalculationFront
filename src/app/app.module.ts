@@ -8,7 +8,6 @@ import { AppComponent } from "./app.component";
 import { appRouting } from './app.routing';
 
 import { EmployeeModule } from "./employee/employee.module";
-import { DepartmentModule } from './department/department.module';
 import { EmployeetaskModule } from "./employeetask/employeetask.module";
 
 
@@ -19,7 +18,6 @@ import { EmployeetaskModule } from "./employeetask/employeetask.module";
     BrowserModule,
     appRouting,
     EmployeeModule,
-    DepartmentModule,
     EmployeetaskModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
